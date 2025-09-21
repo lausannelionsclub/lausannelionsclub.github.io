@@ -14,8 +14,8 @@
       --bg:#0f1724;
       --card:#0b1220;
       --muted:#94a3b8;
-      --accent1:#ffb703;
-      --accent2:#6ee7b7;
+      --accent1:#d1d5db; /* light gray */
+      --accent2:#9ca3af; /* medium gray */
       --glass: rgba(255,255,255,0.04);
       --glass-2: rgba(255,255,255,0.02);
       color-scheme: dark;
@@ -25,8 +25,8 @@
     html,body{height:100%}
     body{
       margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-      background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
-                  radial-gradient(1000px 500px at 90% 90%, rgba(255,183,3,0.04), transparent),
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(156,163,175,0.06), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(209,213,219,0.04), transparent),
                   var(--bg);
       -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
       color: #e6eef8;
@@ -83,7 +83,7 @@
     .sparkle{position:absolute;right:-18px;top:-18px;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 40%);filter:blur(10px);opacity:.6;animation:float 6s infinite}
     @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
 
-    .nav-link:focus,.cta:focus{outline:3px solid rgba(255,183,3,0.18);outline-offset:2px}
+    .nav-link:focus,.cta:focus{outline:3px solid rgba(209,213,219,0.3);outline-offset:2px}
   </style>
 
 </head>
