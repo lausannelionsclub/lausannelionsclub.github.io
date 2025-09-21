@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr-CH">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lions Club Lausanne — Modern</title>
+  <meta name="description" content="Modern designer-style homepage for Lions Club Lausanne — animated, responsive and ready for GitHub Pages." />
+
+  <!-- Google font (system fallback included) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f1724; /* deep navy */
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --accent1:#ffb703;
+      --accent2:#6ee7b7;
+      --glass: rgba(255,255,255,0.04);
+      --glass-2: rgba(255,255,255,0.02);
+      color-scheme: dark;
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+      background: radial-gradient(1200px 600px at 10% 10%, rgba(110,231,183,0.06), transparent),
+                  radial-gradient(1000px 500px at 90% 90%, rgba(255,183,3,0.04), transparent),
+                  var(--bg);
+      -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale;
+      color: #e6eef8;
+      line-height:1.4;
+      padding-bottom:60px;
+    }
+
+    /* page container */
+    .wrap{max-width:1100px;margin:48px auto;padding:28px}
+
+    /* header */
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent1),var(--accent2));display:grid;place-items:center;font-weight:800;color:#071226}
+    .brand h1{font-size:20px;margin:0}
+    .brand p{margin:0;color:var(--muted);font-size:13px}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .nav-link{padding:8px 12px;border-radius:10px;color:var(--muted);text-decoration:none;font-weight:600}
+    .nav-link:hover{background:var(--glass);color:inherit}
+    .cta{background:linear-gradient(90deg,var(--accent1),var(--accent2));padding:8px 14px;border-radius:12px;color:#071226;font-weight:700;text-decoration:none}
+
+    /* hero */
+    .hero{margin-top:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);border-radius:18px;padding:28px;display:grid;grid-template-columns:1fr 360px;gap:24px;align-items:center;backdrop-filter:blur(6px)}
+    .hero h2{font-size:34px;margin:0 0 8px}
+    .hero p{color:var(--muted);margin:0 0 18px}
+    .hero .actions{display:flex;gap:12px}
+
+    .hero-card{background:linear-gradient(180deg,var(--card),rgba(255,255,255,0.01));padding:18px;border-radius:14px;box-shadow:0 6px 30px rgba(2,6,23,0.7)}
+
+    /* animated cards */
+    .kpi{display:flex;gap:14px}
+    .kpi .item{flex:1;padding:14px;background:var(--glass);border-radius:12px;text-align:center}
+    .kpi .num{font-weight:800;font-size:18px}
+    .kpi .lbl{color:var(--muted);font-size:13px}
+
+    /* news grid */
+    .news-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:18px}
+    .news{background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);padding:14px;border-radius:12px;overflow:hidden;position:relative}
+    .news img{width:100%;height:120px;object-fit:cover;border-radius:8px}
+    .news h3{margin:10px 0 6px;font-size:16px}
+    .news p{margin:0;color:var(--muted);font-size:13px}
+
+    /* micro interactions */
+    .news:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(2,6,23,0.6);transition:all .35s cubic-bezier(.2,.9,.2,1)}
+    .news{transition:all .35s cubic-bezier(.2,.9,.2,1)}
+
+    /* footer */
+    footer{margin-top:40px;color:var(--muted);font-size:13px;text-align:center}
+
+    /* responsiveness */
+    @media (max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .wrap{padding:18px;margin:20px}
+      .brand h1{font-size:18px}
+    }
+
+    /* subtle animated gradient underline for headings */
+    .accent-underline{position:relative;display:inline-block}
+    .accent-underline::after{content:'';position:absolute;left:0;right:0;bottom:-6px;height:6px;border-radius:6px;background:linear-gradient(90deg,var(--accent2),var(--accent1));opacity:.18;transform:translateY(6px);transition:transform .45s cubic-bezier(.2,.9,.2,1)}
+    .accent-underline:hover::after{transform:translateY(0)}
+
+    /* small animated sparkle */
+    .sparkle{position:absolute;right:-18px;top:-18px;width:44px;height:44px;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,0.18), transparent 40%);filter:blur(10px);opacity:.6;animation:float 6s infinite}
+    @keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}
+
+    /* accessible focus */
+    .nav-link:focus,.cta:focus{outline:3px solid rgba(255,183,3,0.18);outline-offset:2px}
+
+  </style>
+
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">LC</div>
+        <div>
+          <h1>Lions Club Lausanne</h1>
+          <p>Multi-District 102 — Engagement local, impact global</p>
+        </div>
+      </div>
+
+      <nav aria-label="Main navigation">
+        <a class="nav-link" href="#agenda">Agenda</a>
+        <a class="nav-link" href="#actualites">Actualités</a>
+        <a class="nav-link" href="#contact">Contact</a>
+        <a class="cta" href="#donate">Faire un don</a>
+      </nav>
+    </header>
+
+    <section class="hero" aria-labelledby="hero-title">
+      <div>
+        <h2 id="hero-title">Rencontrer, Servir, Inspirer — <span class="accent-underline">Lausanne</span></h2>
+        <p>Une mise en page moderne et intuitive pour partager les événements, actualités et opportunités de bénévolat du club.</p>
+
+        <div class="kpi" role="list" aria-label="KPI">
+          <div class="item" role="listitem">
+            <div class="num" data-target="18860">0</div>
+            <div class="lbl">Id LCI</div>
+          </div>
+          <div class="item" role="listitem">
+            <div class="num" data-target="75">0</div>
+            <div class="lbl">Années</div>
+          </div>
+          <div class="item" role="listitem">
+            <div class="num" data-target="120">0</div>
+            <div class="lbl">Membres approxim.</div>
+          </div>
+        </div>
+
+        <div class="actions" style="margin-top:16px">
+          <a class="cta" href="#actualites">Voir les actualités</a>
+          <a class="nav-link" href="#agenda">Voir l'agenda</a>
+        </div>
+
+      </div>
+
+      <aside class="hero-card" aria-label="Prochaine réunion">
+        <div style="position:relative">
+          <div class="sparkle" aria-hidden="true"></div>
+          <strong style="display:block">Prochaine séance</strong>
+          <p style="margin:6px 0 10px;color:var(--muted)">1er mardi — 12:00<br>Lausanne-Palace</p>
+
+          <div style="display:flex;gap:10px;align-items:center">
+            <div style="flex:1">
+              <small style="color:var(--muted)">Inscription</small>
+              <div style="margin-top:8px"><a class="cta" href="#">Je participe</a></div>
+            </div>
+            <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=400&auto=format&fit=crop&ixlib=rb-4.0.3&s=placeholder" alt="Illustration" style="width:88px;height:88px;border-radius:10px;object-fit:cover">
+          </div>
+
+        </div>
+      </aside>
+    </section>
+
+    <main>
+      <section id="actualites" style="margin-top:28px">
+        <h3 style="margin:0 0 12px">Actualités récentes</h3>
+
+        <div class="news-grid">
+          <!-- Example news cards — replace these with dynamic content when ready -->
+          <article class="news" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="Gala">
+            <h3>Soirée de gala en soutien à la Fondation Ciao Kids</h3>
+            <p>18 septembre 2025 — Une soirée exceptionnelle sous le signe de l'émotion.</p>
+          </article>
+
+          <article class="news" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1601758123927-54b3a1f0c1d6?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="Vacherins">
+            <h3>Vente de Vacherins Hauser</h3>
+            <p>8 décembre 2024 — Dégustez l'authentique Vacherin et soutenez nos oeuvres sociales.</p>
+          </article>
+
+          <article class="news" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1544072673-2c1b6f9b4b12?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="75 ans">
+            <h3>75 ans du Lions Club Lausanne</h3>
+            <p>17 mars 2024 — Spectacle exclusif avec Yann Lambiel.</p>
+          </article>
+
+          <article class="news" tabindex="0">
+            <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&w=1200&auto=format&fit=crop&s=placeholder" alt="Theodora">
+            <h3>Théâtre en faveur de la Fondation Théodora</h3>
+            <p>11 janvier 2023 — Repas de soutien et pièce de théâtre.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="agenda" style="margin-top:28px">
+        <h3>Agenda</h3>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px;margin-top:12px">
+          <div class="hero-card">
+            <strong>7 oct — Séance statutaire (soir)</strong>
+            <div style="color:var(--muted);margin-top:6px">19:00 — Lausanne-Palace</div>
+          </div>
+
+          <div class="hero-card">
+            <strong>4 nov — Assemblée générale (midi)</strong>
+            <div style="color:var(--muted);margin-top:6px">12:00 — Lausanne-Palace</div>
+          </div>
+
+          <div class="hero-card">
+            <strong>5-8 nov — Europaforum Dublin 2025</strong>
+            <div style="color:var(--muted);margin-top:6px">Déplacement à Dublin</div>
+          </div>
+
+          <div class="hero-card">
+            <strong>18 nov — Séance statutaire (soir)</strong>
+            <div style="color:var(--muted);margin-top:6px">19:00 — Lausanne-Palace</div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:28px">
+        <h3>Contact</h3>
+        <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:12px">
+          <div class="hero-card" style="flex:1;min-width:240px">
+            <strong>Adresse</strong>
+            <p style="margin:8px 0;color:var(--muted)">Lausanne-Palace<br>7-9, Rue du Grand-Chêne<br>CH - 1002 Lausanne</p>
+          </div>
+
+          <div class="hero-card" style="width:320px">
+            <strong>Réunions</strong>
+            <p style="margin:8px 0;color:var(--muted)">1er mardi, 12:00<br>3e mardi, 19:00</p>
+            <a class="cta" href="#">Contacter</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div style="margin-top:30px">
+        © Lions Club Lausanne — Designed for GitHub Pages • <a href="#" style="color:var(--accent1);text-decoration:none">Mentions légales</a>
+      </div>
+    </footer>
+
+  </div>
+
+  <script>
+    // Simple counter animation for KPI
+    document.querySelectorAll('.num').forEach(el=>{
+      const target = +el.getAttribute('data-target');
+      let current = 0;
+      const step = Math.max(1,Math.floor(target/90));
+      const tick = ()=>{
+        current += step;
+        if(current>=target){el.textContent = target;return}
+        el.textContent = current;
+        requestAnimationFrame(tick);
+      };
+      tick();
+    });
+
+    // Prefetch images progressively (very light)
+    const imgs = Array.from(document.querySelectorAll('.news img'));
+    imgs.forEach((img,i)=>{setTimeout(()=>{const s=new Image();s.src=img.src;}, i*300)});
+
+    // small accessibility: allow Enter to open card (demo behavior)
+    document.querySelectorAll('.news').forEach(card=>{
+      card.addEventListener('keydown',e=>{if(e.key==='Enter'){card.querySelector('h3').style.textDecoration='underline';card.querySelector('h3').focus();}})
+    });
+  </script>
+
+</body>
+</html>
